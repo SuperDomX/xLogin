@@ -11,24 +11,26 @@
  * @todo
  */
 class xLogin extends Xengine {
-		function __construct($c){
-			parent::__construct($c); // IMPORTANT!!!
+		function __construct($sdx){
+			// parent::__construct($c); // IMPORTANT!!!
 			
-			$this->set('SUPER_ADMIN',false);
-			$q = $this->q();
+			// $this->set('SUPER_ADMIN',false);
+			// $q = $this->q();
 
-			$SUPER_ADMIN = $q->Select('id','Users',array(
-				'power_lvl' 	=> 9
-			));
+			// $SUPER_ADMIN = $q->Select('id','Users',array(
+			// 	'power_lvl' 	=> 9
+			// ));
 
-			// If there fails to be a super-admin - we need to make one!
-			if( empty($SUPER_ADMIN) ){
-				$this->set('login_title','Add a Admin Account');
-				$this->set('login_message','Enter a Username/Password Combo to Continue');
-			}else{
-				$this->_SET['SUPER_ADMIN'] = $SUPER_ADMIN[0]['id'];
-			}
+			// // If there fails to be a super-admin - we need to make one!
+			// if( empty($SUPER_ADMIN) ){
+			// 	$this->set('login_title','Add a Admin Account');
+			// 	$this->set('login_message','Enter a Username/Password Combo to Continue');
+			// }else{
+			// 	$this->_SET['SUPER_ADMIN'] = $SUPER_ADMIN[0]['id'];
+			// }
 		}
+
+
 
 		// The Site allows login anywhere, as so long as autorun is running...
 		function autoRun($X){
