@@ -84,11 +84,7 @@
                             container : '.content',
                             fragment  : '.content',
                             timeout   : 5000,
-                            {if $Xtra == 'login'}
-                                url       : '../'+window.location.search+window.location.hash
-                            {else}
-                                url       : window.location.pathname+window.location.search+window.location.hash
-                            {/if}
+                            url       : window.location.pathname+window.location.search+window.location.hash
 					      });
 
 					    }
