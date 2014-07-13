@@ -21,10 +21,22 @@ class xLogin extends Xengine {
 				'power_lvl' 	=> 9
 			));
 
+
+
 			// If there fails to be a super-admin - we need to make one!
 			if( empty($SUPER_ADMIN) ){
 				$this->set('login_title','Add a Admin Account');
 				$this->set('login_message','Enter a Username/Password Combo to Continue');
+
+				if (isset($_SERVER['HTTP_COOKIE'])) {
+				    $cookies = explode(';', $_SERVER['HTTP_COOKIE']);
+				    foreach($cookies as $cookie) {
+				        $parts = explode('=', $cookie);
+				        $name = trim($parts[0]);
+				        setcookie($name, '', time()-1000);
+				        setcookie($name, '', time()-1000, '/');
+				    }
+				}
 			}else{
 				$this->_SET['SUPER_ADMIN'] = $SUPER_ADMIN[0]['id'];
 			}
