@@ -155,7 +155,11 @@ class xLogin extends Xengine {
 		}
 
 		function index(){
-			
+			  
+		}
+
+		function profile(){
+			// return array();
 		}
 
 		private function insertUser($user)
