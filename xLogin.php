@@ -158,6 +158,10 @@ class xLogin extends Xengine {
 			
 		}
 
+		function profile(){
+			// return array();
+		}
+
 		private function insertUser($user)
 		{
 			$hash = sha1( md5( base64_encode($user['email'].$user['password']) ) );
