@@ -8,7 +8,9 @@
  * @mini key
  * @link login/newAdmin
  * @see domain
- * @todo
+ * @release alpha 
+ * @alpha true
+ * @todo 
  */
 class xLogin extends Xengine {
 		function __construct($c){
@@ -155,11 +157,12 @@ class xLogin extends Xengine {
 		}
 
 		function index(){
-			  
+			
 		}
 
-		function profile(){
-			// return array();
+		function profile($user_id='')
+		{
+			# code...
 		}
 
 		private function insertUser($user)
