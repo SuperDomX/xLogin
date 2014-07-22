@@ -155,7 +155,7 @@ class xLogin extends Xengine {
 		}
 
 		function index(){
-			
+			  
 		}
 
 		function profile(){
