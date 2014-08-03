@@ -3,7 +3,7 @@
  * @author heylisten@xtiv.net
  * @name Login
  * @desc Handles the logic of authentication to the website
- * @version v2.0.0
+ * @version v2.0.1
  * @icon key.png
  * @mini key
  * @link login/keys
