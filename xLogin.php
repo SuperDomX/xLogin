@@ -3,10 +3,10 @@
  * @author heylisten@xtiv.net
  * @name Login
  * @desc Handles the logic of authentication to the website
- * @version v1(11.11.01@03:03)
+ * @version v2.0.0
  * @icon key.png
  * @mini key
- * @link login/newAdmin
+ * @link login/keys
  * @see domain
  * @release alpha 
  * @alpha true
@@ -49,14 +49,11 @@ class xLogin extends Xengine {
 		// The Site allows login anywhere, as so long as autorun is running...
 		function autoRun($X){
 			// Whenever we find the POST Login Set, we run the Login Procedure. 
-
-			if(isset($_POST['login']) && is_array($_POST['login']))
+			if(isset($_POST['login']) && is_array($_POST['login'])){
 				return $this->login($_POST['login']['username'],$_POST['login']['password']);
-			else if($this->Key['is']['user']){
+			} else if($this->Key['is']['user']){
 				$this->set('user',$_SESSION['user']);
-			}
-			
-			
+			} 
 		}
 
 		private function getUserByName($user,$cols = 'id'){
@@ -66,11 +63,25 @@ class xLogin extends Xengine {
 			return $u[0];	
 		}
 
+		private function getUserByEmail($email,$cols = 'id'){
+			$u = $this->Q->Select($cols,'Users',array(
+				'email' 	=> $email
+			));
+			return $u[0];	
+		}
+
 		/**
 		 * @remotable
 		 */
-		private function login($username,$password){			
-			$u = $this->getUserByName($username,'id,username,email,password,hash,power_lvl');
+		private function login($username,$password){	
+			
+			if($this->is_email($username)){
+				$u = $this->getUserByEmail($username,'id,username,email,password,hash,power_lvl');				
+			}else{
+				$u = $this->getUserByName($username,'id,username,email,password,hash,power_lvl');
+			}
+
+			
 			// Username Not Found
 			if(empty($u)){
 				// This Might be the first user ever.
@@ -160,9 +171,45 @@ class xLogin extends Xengine {
 			
 		}
 
+		function keys(){
+
+		}
+
+		function fireKey(){
+
+		}
+
+		function waterKey(){
+			
+		}
+		function earthKey(){
+			
+		}
+		function windKey(){
+			
+		}
+
 		function profile($user_id='')
 		{
 			# code...
+			if(isset($_POST['user']) && $this->Key['is']['user']){
+				// exit;
+				$q = $this->q();
+
+				$q->Update('Users',$_POST['user'],array(
+					'id' => $_SESSION['user']['id']
+				));
+
+				$user = $q->Select('*','Users',array(
+					'id' => $_SESSION['user']['id']
+				));
+				unset($_SESSION['user']);
+
+				$this->setUser($user[0]);
+
+				$this->set('user',$_SESSION['user']);	
+
+			}
 		}
 
 		private function insertUser($user)

@@ -1,5 +1,5 @@
 <div class="single-widget-container">
-    <section class="widget login-widget">
+    <section class="login-widget">
         <!-- <header class="text-align-center">
             <h4>Login to your account</h4>
         </header> -->
@@ -13,7 +13,7 @@
                                 <i class="fa fa-user"></i>
                             </span>
                         <input name="login[username]" id="login[username]" type="text" class="form-control input-transparent input-lg"
-                               placeholder="Your Username">
+                               placeholder="{if !$SUPER_ADMIN}Alias{else}Alias or Email{/if}">
                     </div>
 
                 </div>
@@ -22,20 +22,20 @@
 
                     <div class="input-group input-group-lg">
                             <span class="input-group-addon">
-                                <i class="fa fa-lock"></i>
+                                <i class="fa fa-key"></i>
                             </span>
                         <input name="login[password]" id="login[password]" type="password" class="form-control input-transparent input-lg"
-                               placeholder="Your Password">
+                               placeholder="Key">
                     </div>
  
                 {if $SUPER_ADMIN === false}
                 {* FRESH INSTALL *} 
                     <div class="input-group input-group-lg">
                             <span class="input-group-addon">
-                                <i class="fa fa-key"></i>
+                                <i class="fa fa-lock"></i>
                             </span>
                         <input name="login[confirm]" id="login[confirm]" type="password" class="form-control input-transparent input-lg"
-                               placeholder="Confirm">
+                               placeholder="Confirm Key">
                     </div>
  
 
@@ -44,20 +44,20 @@
                                 <i class="fa fa-envelope"></i>
                             </span>
                         <input name="login[email]" id="login[email]" type="email" class="form-control input-transparent input-lg"
-                               placeholder="Your Email">
+                               placeholder="Email">
                     </div>
  
                 {/if}
 
                 </div>
                 <div class="col-md-12 btn-group">  
-                    <button type="submit" class="btn   btn-lg btn-success col-md-7">
-                        <i class="fa fa-lock"></i>
-                        <small>Unlock</small>
+                    <button type="submit" class="btn btn-block  btn-lg btn-success ">
+                        <i class="fa fa-key"></i>
+                        Unlock
                     </button>
-                     <button type="submit" class="btn   btn-lg btn-info col-md-5">
+                     <button type="submit" class="btn  btn-block  btn-info ">
                         <i class="fa fa-question"></i>
-                        <small>Forgot</small>
+                        Forgot
                     </button>
                 </div>
             </form>

@@ -2,13 +2,13 @@
         <div class="col-md-7">
             <section class="widget">
                 <header>
-                    <h4><i class="fa fa-user"></i> Account Profile <small>Create new or edit existing user</small></h4>
+                    <h4> <i class="fa fa-user"></i>  {$user.username} <small>Account Profile </small></h4>
                 </header>
                 <div class="body">
                     <form id="user-form" class="form-horizontal label-left"
                           novalidate="novalidate"
                           method="post"
-                          data-parsley-priority-enabled="false">
+                          data-parsley-priority-enabled="false" >
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="text-align-center">
@@ -16,32 +16,32 @@
                                 </div>
                             </div>
                             <div class="col-md-8">
-                                <h3 class="no-margin">Maryna Dorash</h3>
+                                <h3 class="no-margin">{$user.name}</h3>
                                 <address>
-                                    <strong>Development manager</strong> at <strong><a href="#">Allspana Inc.</a></strong><br>
-                                    <abbr title="Work email">e-mail:</abbr> <a href="mailto:#">maryna.dorash@allspana.by</a><br>
-                                    <abbr title="Work Phone">phone:</abbr> (123) 456-7890
+                                    <!-- <strong>Development manager</strong> at <strong><a href="#">Allspana Inc.</a></strong><br> -->
+                                    <abbr title="Work email">e-mail:</abbr> <a href="mailto:#">{$user.email}</a><br>
+                                    <!-- <abbr title="Work Phone">phone:</abbr> (123) 456-7890 -->
                                 </address>
                             </div>
                         </div>
                         <fieldset>
-                            <legend>Account Edit Form <small>Some explanation text</small></legend>
+                            <legend>Account Info <small>Basic Info</small></legend>
                         </fieldset>
                         <fieldset>
-                            <legend class="section">Personal Info</legend>
-                            <div class="control-group">
+                            <!-- <legend class="section">Personal Info</legend> -->
+                            <!-- <div class="control-group">
                                 <label class="control-label" for="prefix">Prefix</label>
                                 <div class="controls form-group">
                                     <div class="col-sm-4"><input type="text" id="prefix" name="prefix" class="form-control"></div>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="control-group">
-                                <label class="control-label" for="first-name">First Name <span class="required">*</span></label>
+                                <label class="control-label" for="first-name">Name<span class="required">*</span></label>
                                 <div class="controls form-group">
-                                    <div class="col-sm-8"><input type="text" id="first-name" name="first-name" required="required" class="form-control" ></div>
+                                    <div class="col-sm-8"><input type="text" id="first-name" name="user[name]" value="{$user.name}" required="required" class="form-control" ></div>
                                 </div>
                             </div>
-                            <div class="control-group">
+                            <!-- <div class="control-group">
                                 <label class="control-label" for="last-name">Last Name <span class="required">*</span></label>
                                 <div class="controls form-group">
                                     <div class="col-sm-8"><input type="text" id="last-name" name="last-name" required="required" class="form-control" ></div>
@@ -52,29 +52,18 @@
                                 <div class="controls form-group">
                                     <div class="col-sm-8"><input id="middle-name" class="form-control" type="text" name="middle-name" value=""></div>
                                 </div>
-                            </div>
-                            <div class="control-group">
-                                <label class="control-label">Gender</label>
-                                <div class="controls form-group">
-                                    <div id="gender" class="btn-group" data-toggle="buttons">
-                                        <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-                                            <input type="radio" name="gender" value="male"> &nbsp; Male &nbsp;
-                                        </label>
-                                        <label class="btn btn-primary active" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-                                            <input type="radio" name="gender" value="female"> Female
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
+                            </div> -->
+                            
                             <div class="control-group">
                                 <label for="date-of-birth" class="control-label">Date Of Birth <span class="required">*</span></label>
                                 <div class="controls form-group">
-                                    <div class="col-sm-6"><input id="date-of-birth" class="date-picker form-control" required="required" type="text" name="date-of-birth" value=""></div>
+                                    <div class="col-sm-6"><input id="date-of-birth" class="date-picker form-control" required="required" value="{$user.bday}" type="text" name="user[bday]" value=""></div>
                                 </div>
                             </div>
                         </fieldset>
+                        
                         <fieldset>
-                            <legend class="section">Contact Info</legend>
+                            <!-- <legend class="section">Contact Info</legend> -->
                             <div class="control-group">
                                 <label id="email-label" for="email" class="control-label">Email <span class="required">*</span></label>
                                 <div class="controls form-group">
@@ -83,15 +72,28 @@
                                             <input id="email" type="email"
                                                    data-trigger="change" required="required"
                                                    class="form-control"
-                                                   name="email">
+                                                   name="user[email]" value="{$user.email}">
                                             <span class="input-group-btn">
-                                                <button class="btn btn-success" type="button">Write an email</button>
+                                                <button class="btn btn-success" type="button">Confirm Email Change</button>
                                             </span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="control-group">
+                                <label class="control-label">Newsletter</label>
+                                <div class="controls form-group">
+                                    <div id="gender" class="btn-group" data-toggle="buttons">
+                                        <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                                            <input type="radio" name="user[newsletter]" value="true"> &nbsp; Subscribe &nbsp;
+                                        </label>
+                                        <label class="btn btn-primary active" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                                            <input type="radio" name="user[newsletter]" value="false"> Unsubscibe
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="control-group">
                                 <label for="phone" class="control-label">Phone <span class="required">*</span></label>
                                 <div class="controls form-group">
                                     <div class="col-xs-12 col-sm-8">
@@ -127,9 +129,9 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </fieldset>
-                        <fieldset>
+                        <!-- <fieldset>
                             <legend class="section">
                                 Address
                                 <button type="button" class="btn btn-primary btn-xs pull-right">
@@ -476,17 +478,37 @@
                                     </select>
                                 </div>
                             </div>
-                        </fieldset>
-                        <div class="form-actions">
-                            <button type="submit" class="btn btn-primary">Validate &amp; Submit</button>
-                            <button type="button" class="btn btn-default">Cancel</button>
-                        </div>
+                        </fieldset> -->
+                        <button type="submit" class="btn btn-success btn-block">Save</button>
                     </form>
                 </div>
             </section>
         </div>
         <div class="col-md-5">
+            {if $SUPER_ADMIN}
+                <div class="alert alert-warning">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <strong><i class="fa fa-key"></i> Golden Key</strong> The Key to the City, as well as the Dungeon.
+                </div>
+                <div class="alert alert-danger">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <strong><i class="fa fa-fire"></i> Fire Key</strong> Powers of deletion Granted.
+                </div>
+                <div class="alert alert-info">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <strong><i class="fa fa-heart"></i> Water Key</strong> Wisdom of Curative Powers over all domain Granted.
+                </div>
+                <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <strong><i class="fa fa-globe"></i> Earth Key</strong> Strength to create content & upload Large Files Granted
+                </div>
+                <div class="alert alert-primary">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <strong><i class="fa fa-flag"></i> Wind Key</strong> Landing Page Presence Granted.
+                </div>
+            {/if}
             <section class="widget">
+
                 <header>
                     <h4><i class="fa fa-cogs"></i> Account settings</h4>
                     <div class="actions">
