@@ -1,7 +1,7 @@
 <?php
 /**
  * @author heylisten@xtiv.net
- * @name Keys
+ * @name Login
  * @desc Handles the logic of authentication to the website
  * @version v1(11.11.01@03:03)
  * @icon key.png
