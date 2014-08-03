@@ -3,7 +3,7 @@
  * @author heylisten@xtiv.net
  * @name Login
  * @desc Handles the logic of authentication to the website
- * @version v1(11.11.01@03:03)
+ * @version v2.0.0
  * @icon key.png
  * @mini key
  * @link login/keys
@@ -173,6 +173,20 @@ class xLogin extends Xengine {
 
 		function keys(){
 
+		}
+
+		function fireKey(){
+
+		}
+
+		function waterKey(){
+			
+		}
+		function earthKey(){
+			
+		}
+		function windKey(){
+			
 		}
 
 		function profile($user_id='')
