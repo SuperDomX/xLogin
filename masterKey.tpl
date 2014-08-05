@@ -39,8 +39,7 @@
 						dataType : "json",
 						success: function(data)
 						{
-						  // Handle the server response (display errors if necessary)
-						  	DATA = data;
+						  // Handle the server response (display errors if necessary) 
 								i.toggleClass('fa-spinner fa-spin');
 						    if(data.success){
 						    	b.toggleClass('btn-success');
