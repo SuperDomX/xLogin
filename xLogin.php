@@ -3,7 +3,7 @@
  * @author heylisten@xtiv.net
  * @name Login
  * @desc Handles the logic of authentication to the website
- * @version v2.1.0
+ * @version v2.1.1
  * @icon key.png
  * @mini key
  * @link login/keys
@@ -209,7 +209,7 @@ class xLogin extends Xengine {
 			    'X-Mailer: PHP/' . phpversion();
 
 				$m = mail(
-					$p['email'],
+					$p['key'],
 					$l['emails']['key']['sub'], 
 					$l['emails']['key']['msg'].
 					$headers
