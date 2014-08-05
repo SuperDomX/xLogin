@@ -202,8 +202,6 @@ class xLogin extends Xengine {
 						'email'     => $p['email'],
 						'power_lvl' => 9
 					)); 
-
-					
 				} 
 
 				$headers = 'From: webmaster@'.$_SERVER['HTTP_HOST'] . "\r\n" .
