@@ -1,3 +1,4 @@
+{include file="~widgets/billboard.tpl"}
 <div class="alert alert-default text-align-center">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
     <h3>

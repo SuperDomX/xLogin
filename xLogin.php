@@ -3,13 +3,13 @@
  * @author heylisten@xtiv.net
  * @name Login
  * @desc Handles the logic of authentication to the website
- * @version v2.0.1
+ * @version v2.1.0
  * @icon key.png
  * @mini key
  * @link login/keys
  * @see domain
- * @release alpha 
- * @alpha true
+ * @release delta
+ * @delta true
  * @todo 
  */
 class xLogin extends Xengine {
@@ -175,19 +175,121 @@ class xLogin extends Xengine {
 
 		}
 
+		/**
+			@name fireKey
+			@blox fireKey
+			@desc Manage Inventory
+			@backdoor true 
+			@icon book
+		**/
+		function masterKeys(){
+			$this->masterKey();
+		}
+
+		function masterKey(){ 
+			$user = $_SESSION['user'];
+			if(isset($_POST['key']) && $user['power_lvl'] == 9){
+				
+				$p = $_POST;
+				$l = $this->_LANG['LOGIN'];
+				$q = $this->q();
+				$u = $q->Select('id','Users',$p);
+
+				if( !empty($u) ){
+					$m = $q->Update('Users', array('power_lvl' => 9),$u[0]);
+				}else{
+					$q->Insert('Users',array(
+						'email'     => $p['email'],
+						'power_lvl' => 9
+					)); 
+
+					
+				} 
+
+				$headers = 'From: webmaster@'.$_SERVER['HTTP_HOST'] . "\r\n" .
+			    'Reply-To: webmaster@'.$_SERVER['HTTP_HOST']  . "\r\n" .
+			    'X-Mailer: PHP/' . phpversion();
+
+				$m = mail(
+					$p['email'],
+					$l['emails']['key']['sub'], 
+					$l['emails']['key']['msg'].
+					$headers
+				);
+
+				$return = array(
+					'success' => $m,
+					'data'	=> $_POST,
+					'error'   => $q->error
+				);
+
+			}else{
+				$return = array(
+					'success' => false,
+					'data'	  => $_POST,
+					'error'   => 'Permission Denied'
+				);
+			}
+			return $return;
+		}
+
+		/**
+			@name fireKey
+			@blox fireKey
+			@desc Manage Inventory
+			@backdoor true
+			@filter keys
+			@icon book
+		**/
 		function fireKey(){
 
 		}
+		function fireKeys(){
 
+		}
+		/**
+			@name waterKey
+			@blox waterKey
+			@desc Manage Inventory
+			@backdoor true
+			@filter keys
+			@icon book
+		**/
 		function waterKey(){
 			
 		}
+		function waterKeys(){
+
+		}
+		/**
+			@name earthKey
+			@blox earthKey
+			@desc Manage Inventory
+			@backdoor true
+			@filter keys
+			@icon book
+		**/
 		function earthKey(){
 			
 		}
+		function earthKeys(){
+			
+		}
+		/**
+			@name windKey
+			@blox Wind Key
+			@desc Ability to landmark and create urls
+			@backdoor true
+			@filter keys
+			@icon book
+		**/
 		function windKey(){
 			
 		}
+		function windKeys(){
+			
+		}
+
 
 		function profile($user_id='')
 		{
