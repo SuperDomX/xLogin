@@ -3,7 +3,7 @@
  * @author heylisten@xtiv.net
  * @name Login
  * @desc Handles the logic of authentication to the website
- * @version v2.1.2
+ * @version v2(1.3)
  * @icon key.png
  * @mini key
  * @link login/keys
@@ -190,7 +190,7 @@ class xLogin extends Xengine {
 			$user = $_SESSION['user'];
 			if(isset($_POST['key']) && $user['power_lvl'] == 9){
 				
-				$p = $_POST;
+				$p = $_POST['key'];
 				$l = $this->_LANG['LOGIN'];
 				$q = $this->q();
 				$u = $this->getUserByEmail($p['email']);
@@ -209,7 +209,7 @@ class xLogin extends Xengine {
 			    'X-Mailer: PHP/' . phpversion();
 
 				$m = mail(
-					$p['key'],
+					$p['email'],
 					$l['emails']['key']['sub'], 
 					$l['emails']['key']['msg'],
 					$headers
