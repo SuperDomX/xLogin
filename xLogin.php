@@ -1,17 +1,17 @@
 <?php
 /**
- * @author heylisten@xtiv.net
- * @name Login
- * @desc Handles the logic of authentication to the website
- * @version v2(1.5-RC1.0)
- * @icon key.png
- * @mini key
- * @link login/keys
- * @see domain
- * @release delta
- * @delta true
- * @todo 
- */
+* @author heylisten@xtiv.net
+* @name Login
+* @desc Handles the logic of authentication to the website
+* @version v2(1.5-RC1.0)
+* @icon key.png
+* @mini key
+* @link login/keys
+* @see domain
+* @release delta
+* @delta true
+* @todo 
+**/
 class xLogin extends Xengine {
 		function __construct($c){
 			parent::__construct($c); // IMPORTANT!!!
