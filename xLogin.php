@@ -1,17 +1,17 @@
 <?php
 /**
- * @author heylisten@xtiv.net
- * @name Login
- * @desc Handles the logic of authentication to the website
- * @version v2(1.4)
- * @icon key.png
- * @mini key
- * @link login/keys
- * @see domain
- * @release delta
- * @delta true
- * @todo 
- */
+* @author heylisten@xtiv.net
+* @name Login
+* @desc Handles the logic of authentication to the website
+* @version v2(1.5-RC1.0)
+* @icon key.png
+* @mini key
+* @link login/keys
+* @see domain
+* @release delta
+* @delta true
+* @todo 
+**/
 class xLogin extends Xengine {
 		function __construct($c){
 			parent::__construct($c); // IMPORTANT!!!
@@ -204,13 +204,14 @@ class xLogin extends Xengine {
 					)); 
 				} 
 
-				$headers = 'From: webmaster@'.$_SERVER['HTTP_HOST'] . "\r\n" .
-			    'Reply-To: webmaster@'.$_SERVER['HTTP_HOST']  . "\r\n" .
+				$headers = "From: ". $_SESSION['user']['username'] 
+					. "(".$_SESSION['user']['email'].")" . "\r\n" .
+			    'Reply-To: '.$_SESSION['user']['email']  . "\r\n" .
 			    'X-Mailer: PHP/' . phpversion();
 
 				$m = mail(
 					$p['email'],
-					$l['emails']['key']['sub'], 
+					$_SESSION['user']['username'] . $l['emails']['key']['sub'] . $_SERVER['HTTP_HOST'], 
 					$l['emails']['key']['msg'],
 					$headers
 				);
