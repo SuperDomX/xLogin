@@ -80,12 +80,18 @@
 					    {
 					      // Handle the server response (display errors if necessary)
 
-					      $.pjax({ 
-                            container : '.content',
-                            fragment  : '.content',
-                            timeout   : 5000,
-                            url       : window.location.pathname+window.location.search+window.location.hash
-					      });
+                          if(data.success){
+                            $.pjax({ 
+                                container : '.content',
+                                fragment  : '.content',
+                                timeout   : 5000,
+                                url       : window.location.pathname+window.location.search+window.location.hash
+                              });  
+                          }else{
+                            alert(data.error);
+                          }
+
+					      
 
 					    }
 					  });
