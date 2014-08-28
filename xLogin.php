@@ -50,9 +50,19 @@ class xLogin extends Xengine {
 		function autoRun($X){
 			// Whenever we find the POST Login Set, we run the Login Procedure. 
 			if(isset($_POST['login']) && is_array($_POST['login'])){
-				return $this->login($_POST['login']['username'],$_POST['login']['password']);
+				switch ($_POST['login']['action']) {
+					case 'register':
+						return $this->register($_POST['login']);
+					break;
+					
+					default:
+						return $this->login($_POST['login']['username'],$_POST['login']['password']);
+					break;
+				}
 			} else if($this->Key['is']['user']){
-				$this->set('user',$_SESSION['user']);
+				return array(
+					'user' => $_SESSION['user']
+				);
 			} 
 		}
 
@@ -91,7 +101,6 @@ class xLogin extends Xengine {
 				));
 
 				$super = ( empty($super) ) ? false : true ;
-
 
 				if( empty($super) ){
 					$_POST['login']['power_lvl'] = 9;
@@ -442,29 +451,28 @@ class xLogin extends Xengine {
 			return true;
 		}
 
-		function register(){
-			$form = $_POST['form'];
+		function register($form=null){
+			$form = ($form) ? $form : $_POST['form']; 
 			$q = $this->q();
 
 			$error = $this->validateNewUserForm($form);
 
 			$this->set('error',$error);
 
-			if(!$error){
-
+			if(!$error){ 
 				$exist = $q->Select('*','Users',array(
 					'username'	=> $form['username'],
 					'email'		=> $form['email']
 				),'','=','OR');
 
-				# Create new user
-				 
+				# Create new user 
 				if(empty($exist) && $this->checkUserX($form['username']) ){
 					# Check user name against xtensions
 					$form['hash'] 		= sha1(md5(base64_encode($form['email'].$form['password'])));
 					$form['password'] 	= md5(sha1($form['password']));
 					$form['power_lvl'] 	= 1;
 					unset($form['confirm']);
+					unset($form['action']);
 
 					$q->Insert('Users',$form);
 					$this->setUser($form);
@@ -494,7 +502,7 @@ class xLogin extends Xengine {
 			$this->set('PAGE_TITLE','Create Your Free Account Now');
 			return array(
 				'success' => (empty($error)),
-				'error'   => $q->error,
+				'error'   => $error,
 				'form'    => $form
 			);
 		}
