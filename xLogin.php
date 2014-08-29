@@ -144,7 +144,8 @@ class xLogin extends Xengine {
 						$this->syncDbTables();
 
 					return array(
-						'success' => TRUE 
+						'success' => TRUE,
+						'data' 	  => $_SESSION['user']
 					);
 				}
 			}
@@ -437,6 +438,8 @@ class xLogin extends Xengine {
 			foreach($_SESSION['user'] as $k => $v){
 				setcookie("user[$k]",$v);
 			}
+
+			return $_SESSION['user'];
 		}
 
 		function checkUserX($user){
