@@ -86,9 +86,9 @@ class xLogin extends Xengine {
 		private function login($username,$password){	
 			
 			if($this->is_email($username)){
-				$u = $this->getUserByEmail($username,'id,username,email,password,hash,power_lvl');				
+				$u = $this->getUserByEmail($username,'id,username,email,password,hash,power_lvl,name');				
 			}else{
-				$u = $this->getUserByName($username,'id,username,email,password,hash,power_lvl');
+				$u = $this->getUserByName($username,'id,username,email,password,hash,power_lvl,name');
 			}
 
 			
