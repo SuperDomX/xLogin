@@ -1,5 +1,5 @@
 <div class="container">
-	<div class="jumbotron">
+	<div class="jumbotron tile-light">
 
 	<h1 style="display: inline;">
 		<i class="fa fa-lock fa-5x pull-right text-danger">

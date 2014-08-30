@@ -3,7 +3,7 @@
 * @author heylisten@xtiv.net
 * @name Login
 * @desc Handles the logic of authentication to the website
-* @version v2(1.6)
+* @version v2(1.7)
 * @icon key.png
 * @mini key
 * @link login/keys
@@ -416,7 +416,7 @@ class xLogin extends Xengine {
 				}
 			}
 
-			if(!$this->is_email($form['email'],true))
+			if(!$this->is_email($form['email']))
 				return $this->lang($this->_LANG['LOGIN']['ERROR']['EMAIL'],$form);
 	
 			// Requists passed.
