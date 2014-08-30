@@ -460,7 +460,7 @@ class xLogin extends Xengine {
 
 			$error = $this->validateNewUserForm($form);
 
-			$this->set('error',$error);
+			 
 
 			if(!$error){ 
 				$exist = $q->Select('*','Users',array(
@@ -480,6 +480,8 @@ class xLogin extends Xengine {
 					$q->Insert('Users',$form);
 					$this->setUser($form);
 
+					
+						
 					//header('Location: /'.$form['username']);
 				}else{
 					$exist = $exist[0];
@@ -493,7 +495,7 @@ class xLogin extends Xengine {
 						$error = "The Username, $form[username], Is Not Available.";
 					}
 
-					$this->set('error',$error);
+					 
 				}
 
 			}
@@ -506,7 +508,8 @@ class xLogin extends Xengine {
 			return array(
 				'success' => (empty($error)),
 				'error'   => $error,
-				'form'    => $form
+				'form'    => $form,
+				'data'	  => $_SESSION['user']
 			);
 		}
 
