@@ -479,9 +479,7 @@ class xLogin extends Xengine {
 
 					$q->Insert('Users',$form);
 					$this->setUser($form);
-
-					
-						
+ 
 					//header('Location: /'.$form['username']);
 				}else{
 					$exist = $exist[0];
