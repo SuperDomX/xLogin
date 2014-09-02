@@ -25,7 +25,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-12 text-center">
-			<p class=" label label-sm badge ">powered by<br/>  
+			<p class="label label-sm badge ">powered by<br/>  
 			<img src="{$thumb}src=/bin/images/logos/sdx.png&h=16"/></p>
 
 		</div>
