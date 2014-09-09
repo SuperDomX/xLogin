@@ -12,7 +12,7 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="text-align-center">
-                                <img class="img-circle" src="img/15.jpg" alt="64x64" style="height: 112px;">
+                                <img class="img-circle" src="/users/avatar" alt="64x64" style="height: 112px;">
                             </div>
                         </div>
                         <div class="col-md-8">
