@@ -63,11 +63,11 @@
             </form>
         </div>
         <script type="text/javascript">
-            $(document).ready(function(){
-                if(!$('body').hasClass('sidebar-hidden')){
-                    $('body').addClass('sidebar-hidden');
-                }
-            });
+            // $(document).ready(function(){
+            //     if(!$('body').hasClass('sidebar-hidden')){
+            //         // $('body').addClass('sidebar-hidden');
+            //     }
+            // });
         	window.login = {
         		submit : function (e) {
         			E = e;
