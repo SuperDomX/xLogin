@@ -3,7 +3,7 @@
 * @author heylisten@xtiv.net
 * @name Login
 * @desc Handles the logic of authentication to the website
-* @version v2(1.8)
+* @version v2(1.9)
 * @icon key.png
 * @mini key
 * @link login/keys
@@ -22,8 +22,6 @@ class xLogin extends Xengine {
 			$SUPER_ADMIN = $q->Select('id','Users',array(
 				'power_lvl' 	=> 9
 			));
-
-
 
 			// If there fails to be a super-admin - we need to make one!
 			if( empty($SUPER_ADMIN) ){
@@ -55,6 +53,10 @@ class xLogin extends Xengine {
 						return $this->register($_POST['login']);
 					break;
 					
+					case 'reset':
+						return $this->reset($_POST['login']);
+					break;
+
 					default:
 						return $this->login($_POST['login']['username'],$_POST['login']['password']);
 					break;
@@ -335,6 +337,7 @@ class xLogin extends Xengine {
 				'power_lvl' => $user['power_lvl']
 			));
 		}
+
 		/**
 		 * @remotable
 		 * @formHandler
@@ -426,9 +429,9 @@ class xLogin extends Xengine {
 		}
 
 		function setUser($user){
-			$unset = ['password','hash'];
+			$unset                      = ['password','hash'];
 			
-			$_SESSION['user'] = $user;
+			$_SESSION['user']           = $user;
 			$_SESSION['user']['secret'] = md5($user['username'].$user['password']);
 
 			foreach ($unset as $k => $v) 
@@ -454,13 +457,28 @@ class xLogin extends Xengine {
 			return true;
 		}
 
+		/**
+			@name reset
+			@desc sends email to reset Key.
+		**/
+		function reset($f=null){
+
+			$email = $f['email'];
+			$error = "A Secret Key Code has been sent to $email";
+
+			return array(
+				'success' => (empty($error)),
+				'error'   => $error,
+				'form'    => $f
+				// 'data'	  => $_SESSION['user']
+			);
+		}
+
 		function register($form=null){
 			$form = ($form) ? $form : $_POST['form']; 
 			$q = $this->q();
 
 			$error = $this->validateNewUserForm($form);
-
-			 
 
 			if(!$error){ 
 				$exist = $q->Select('*','Users',array(
@@ -499,8 +517,6 @@ class xLogin extends Xengine {
 			}
 
 			//
-
-
 			$this->set('WWW_PAGE','Create Your Free Account Now');
 			$this->set('PAGE_TITLE','Create Your Free Account Now');
 			return array(
