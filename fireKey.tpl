@@ -17,7 +17,7 @@
 	        </button>
 	    </span>
 	</div>
-    <p>The Fire Key grants users the ability to delete content & ban users.</p>
+    <p>Grants user the ability to delete content & ban users.</p>
 </div>
 
 

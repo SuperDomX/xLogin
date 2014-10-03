@@ -17,5 +17,5 @@
 	        </button>
 	    </span>
 	</div>
-    <p>The Earth Key grants users the ability to manage space & upload large files</p>
+    <p>Grant users the ability to manage space & upload large files</p>
 </div>

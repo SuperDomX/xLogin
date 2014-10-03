@@ -20,6 +20,6 @@
         </span>
     </div>
     <p>
-    	The Wind Key grants users the ability create & landmark pages.
+        Grant users the ability create & landmark pages.
     </p>
 </div>
