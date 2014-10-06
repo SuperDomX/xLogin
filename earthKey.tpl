@@ -1,10 +1,10 @@
 <div class="alert alert-success text-align-center">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h3><i class="fa fa-globe fa-5x"></i><br/><strong>Strength to Grow</strong></h3>
+    <h3><i class="fa fa-leaf fa-5x"></i><br/><strong>Strength to Grow</strong></h3>
 	<div class="input-group">
 	    <span class="input-group-btn">
 	        <button class="btn btn-success active" type="button">
-	           <i class="fa fa-globe "></i>
+	           <i class="fa fa-leaf "></i>
 	        </button>
 	    </span>
 	    <input id="swipe_key" type="email"
