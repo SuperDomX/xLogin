@@ -13,7 +13,7 @@
 	           name="key[email]" value="">
 	    <span class="input-group-btn">
 	        <button class="btn btn-success" type="button" onclick="window.updateNexusServer(this);">
-	              <i class="fa fa-envelope "></i>
+	              <i class="fa fa-warning "></i>
 	        </button>
 	    </span>
 	</div>

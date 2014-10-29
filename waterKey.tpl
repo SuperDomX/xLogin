@@ -4,7 +4,7 @@
 	
 	<div class="input-group">
 	    <span class="input-group-btn">
-	        <button class="btn btn-info active" type="button">
+	        <button class="btn btn-primary active" type="button">
 	             <i class="fa fa-user-md "></i>
 	        </button>
 	    </span>
@@ -13,7 +13,7 @@
 	           class="form-control"
 	           name="key[email]" value="">
 	    <span class="input-group-btn">
-	        <button class="btn btn-success" type="button" onclick="window.updateNexusServer(this);">
+	        <button class="btn btn-warning" type="button" onclick="window.updateNexusServer(this);">
 	            <i class="fa fa-envelope "></i>
 	        </button>
 	    </span>

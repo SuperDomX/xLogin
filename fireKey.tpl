@@ -12,7 +12,7 @@
 	           class="form-control"
 	           name="key[email]" value="">
 	    <span class="input-group-btn">
-	        <button class="btn btn-success" type="button" onclick="window.updateNexusServer(this);">
+	        <button class="btn btn-warning" type="button" onclick="window.updateNexusServer(this);">
 	             <i class="fa fa-envelope "></i>
 	        </button>
 	    </span>
