@@ -1,8 +1,8 @@
 <?php
 /**
 * @author heylisten@xtiv.net
-* @name Login
-* @desc Handles the logic of authentication to the website
+* @name Keys
+* @desc Manage who has authentication to what
 * @version v2(1.9)
 * @icon key.png
 * @mini key
