@@ -1,16 +1,16 @@
 <?php
   /**
-    * @author heylisten@xtiv.net
-    * @name Keys
-    * @desc Manage who has authentication to what
-    * @version v2(1.9)
-    * @icon key.png
-    * @mini key
-    * @link login/keys
-    * @see domain
-    * @release delta
-    * @delta true
-    * @todo 
+    * @author   @xopherdeep heylisten@xtiv.net
+    * @name     Keys
+    * @desc     Manage who has authentication to what
+    * @version  v2(1.9)
+    * @icon     key.png
+    * @mini     key
+    * @link     login/keys
+    * @see      domain
+    * @release  delta
+    * @delta    true
+    * @todo     Clean this up a bit... 
   **/
   class xLogin extends Xengine {
       function __construct($c){
@@ -63,7 +63,7 @@
           return array(
             'user' => $_SESSION['user']
           );
-        } 
+        }
       }
 
       private function getUserByName($user,$cols = 'id'){
