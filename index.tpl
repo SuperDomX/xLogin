@@ -1,2 +1,2 @@
-{include "x.login.tpl"}
+{include "./x.login.tpl"}
 
