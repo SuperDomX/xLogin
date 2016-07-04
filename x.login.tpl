@@ -1,5 +1,5 @@
 <div class="
-  col-md-3 col-md-offset-4
+  col-md-4 col-md-offset-4
   col-sm-6 col-sm-offset-2
   col-xs-11
 ">
@@ -22,7 +22,7 @@
         <div class="body">
             <form id="box-login" class="" action="/.json" method="POST" onsubmit="return window.login.submit(this);">
                 <fieldset>
-                    <div class="form-group "> 
+                    <div class="form-group ">
                         <!-- <label for="password" >ID</label> -->
                         <div class="input-group input-group-lg">
                                 <span class="input-group-addon">
@@ -32,7 +32,7 @@
                                    placeholder="{if !$SUPER_ADMIN}Alias{else}Alias or Email{/if}">
                         </div>
                     </div>
-                    <div class="form-group"> 
+                    <div class="form-group">
                         <!-- <label for="password" >Password</label> -->
                         <div class="input-group input-group-lg">
                                 <span class="input-group-addon">
@@ -42,7 +42,7 @@
                                    placeholder="Enter your pass key">
                         </div>
                     {if $SUPER_ADMIN === false}
-                    {* FRESH INSTALL *} 
+                    {* FRESH INSTALL *}
                         <div class="input-group input-group-lg">
                                 <span class="input-group-addon">
                                     <i class="fa fa-lock"></i>
