@@ -13,9 +13,9 @@
             <br/>
             <br/>
             <h5 >
-            Area Secure
-            <i class="fa fa-lock text-success "></i>
-            Please login to continue.
+            <!-- Area Secure -->
+            <!-- <i class="fa fa-lock text-success "></i> -->
+            <!-- Please login to continue. -->
             </h5>
             <!-- <h2>{$HTTP_HOST}</h2> -->
         </header>
