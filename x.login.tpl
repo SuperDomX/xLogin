@@ -1,4 +1,4 @@
-<div class="col-md-4 col-md-offset-4">
+<div class="col-md-3 col-md-offset-4">
     <section class="widget login-widget">
         <header class="text-align-center">
            <!--  <div class="widget-controls">
