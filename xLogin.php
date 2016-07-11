@@ -1,9 +1,9 @@
 <?php
   /**
-    * @author   @xopherdeep heylisten@xtiv.net
     * @name     Keys
     * @desc     Manage who has authentication to what
-    * @version  v2(1.9)
+    * @version v0.1(160710)
+    * @author  @xopherdeep
     * @icon     key.png
     * @mini     key
     * @link     login/keys
